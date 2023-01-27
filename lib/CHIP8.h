@@ -9,6 +9,7 @@ using namespace std;
 #define STACK_SIZE 16
 #define FREQ 60
 #define V_REGS 16
+#define PROG_START 0x200
 
 #define FONTSET_SIZE 80
 
@@ -47,11 +48,10 @@ class CHIP8{
         uint8_t SOUND_TIMER;        // Sound Timer
         uint16_t CURR_OP;           // Current op code
 
-        uint8_t DISPLAY[SCREEN_HEIGHT][SCREEN_WIDTH];
+        uint8_t DISPLAY[SCREEN_HEIGHT][SCREEN_WIDTH];   // Display pixels
 
 
     public:
         CHIP8();
-
 
 };
