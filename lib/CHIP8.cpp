@@ -7,5 +7,7 @@ CHIP8::CHIP8(){
         RAM[i] = FONTSET[i];
     }
 
+    RAM[0] = *FONTSET;  //TEST THIS LINE. SHOULD REPLACE LOOP
+
     PC = PROG_START; // Set Program counter to proper location
 }
