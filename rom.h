@@ -1,6 +1,13 @@
+#include <fstream>
+#include <sstream>
+#include <stdlib.h>
+
+
 // reads in data from .c8 file
 class rom{
     public:
-        rom();
-    
+        bool openFile(char* filePath);
+        std::string data();
+        //~rom();
+
 };

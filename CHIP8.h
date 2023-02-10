@@ -16,6 +16,8 @@ using namespace std;
 #define SCREEN_WIDTH 64
 #define SCREEN_HEIGHT 32
 
+#define ROM_START 0x200
+
 const static uint8_t FONTSET[FONTSET_SIZE] = {
         0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
         0x20, 0x60, 0x20, 0x20, 0x70, // 1
