@@ -59,4 +59,5 @@ class CHIP8{
         /// @param max ending addr
         void printRAM(int min, int max);
 
+        void parseInstruction();
 };
