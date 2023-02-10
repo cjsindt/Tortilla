@@ -1,6 +1,8 @@
 # Tortilla
 CHIP-8 Interpreter
 
+This was made as a part of my undergraduate senior capstone.
+
 # Feb 2 - Feb 16
 
 Starting development on CHIP-8. Had to start by making sure my project would build with cmake. Tested this by printing "test" to the console.
