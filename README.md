@@ -33,3 +33,5 @@ Once I ran the executable, "test" showed up, so things seem to be working.
 ### Accomplishments
 
 - CMake files and build testing
+- Command line arguments and test rom
+
