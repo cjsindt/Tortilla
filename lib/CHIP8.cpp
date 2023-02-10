@@ -7,7 +7,12 @@ CHIP8::CHIP8(){
         RAM[i] = FONTSET[i];
     }
 
-    RAM[0] = *FONTSET;  //TEST THIS LINE. SHOULD REPLACE LOOP
-
     PC = PROG_START; // Set Program counter to proper location
+}
+
+void CHIP8::printRAM(int min, int max){
+    for(int i = min; i < max; i++){
+        cout << (int)RAM[i];
+        cout << "\n" << endl;
+    }
 }

@@ -54,4 +54,9 @@ class CHIP8{
     public:
         CHIP8();
 
+        /// @brief Prints the contents of ram from the min addr to max addr
+        /// @param min starting addr
+        /// @param max ending addr
+        void printRAM(int min, int max);
+
 };
