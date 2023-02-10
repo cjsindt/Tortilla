@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/connor/Documents/GitHub/Tortilla/lib/CHIP8.h
+iostream
+-
+cstddef
+-
+bitset
+-
+SFML/Graphics.hpp
+-
+
+/home/connor/Documents/GitHub/Tortilla/lib/main.cpp
+CHIP8.h
+/home/connor/Documents/GitHub/Tortilla/lib/CHIP8.h
+stdlib.h
+-
+
