@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstddef>
 #include <bitset>
-#include <SFML/Graphics.hpp>
+#include "rom.h"
 
 using namespace std;
 
@@ -58,6 +58,8 @@ class CHIP8{
         /// @param min starting addr
         /// @param max ending addr
         void printRAM(int min, int max);
+
+        void loadROM();
 
         void parseInstruction();
 };

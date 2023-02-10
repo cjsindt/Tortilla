@@ -16,3 +16,6 @@ void CHIP8::printRAM(int min, int max){
         cout << "\n" << endl;
     }
 }
+
+void CHIP8::loadROM(){
+}
