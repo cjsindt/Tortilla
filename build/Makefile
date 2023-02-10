@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

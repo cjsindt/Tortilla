@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Tortilla.dir/depend.make
@@ -58,30 +58,30 @@ include CMakeFiles/Tortilla.dir/progress.make
 include CMakeFiles/Tortilla.dir/flags.make
 
 CMakeFiles/Tortilla.dir/main.cpp.o: CMakeFiles/Tortilla.dir/flags.make
-CMakeFiles/Tortilla.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tortilla.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tortilla.dir/main.cpp.o -c /home/connor/Documents/GitHub/Tortilla/lib/main.cpp
+CMakeFiles/Tortilla.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tortilla.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tortilla.dir/main.cpp.o -c /home/connor/Documents/GitHub/Tortilla/main.cpp
 
 CMakeFiles/Tortilla.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tortilla.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/connor/Documents/GitHub/Tortilla/lib/main.cpp > CMakeFiles/Tortilla.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/connor/Documents/GitHub/Tortilla/main.cpp > CMakeFiles/Tortilla.dir/main.cpp.i
 
 CMakeFiles/Tortilla.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tortilla.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/connor/Documents/GitHub/Tortilla/lib/main.cpp -o CMakeFiles/Tortilla.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/connor/Documents/GitHub/Tortilla/main.cpp -o CMakeFiles/Tortilla.dir/main.cpp.s
 
 CMakeFiles/Tortilla.dir/CHIP8.cpp.o: CMakeFiles/Tortilla.dir/flags.make
-CMakeFiles/Tortilla.dir/CHIP8.cpp.o: CHIP8.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tortilla.dir/CHIP8.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tortilla.dir/CHIP8.cpp.o -c /home/connor/Documents/GitHub/Tortilla/lib/CHIP8.cpp
+CMakeFiles/Tortilla.dir/CHIP8.cpp.o: ../CHIP8.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tortilla.dir/CHIP8.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tortilla.dir/CHIP8.cpp.o -c /home/connor/Documents/GitHub/Tortilla/CHIP8.cpp
 
 CMakeFiles/Tortilla.dir/CHIP8.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tortilla.dir/CHIP8.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/connor/Documents/GitHub/Tortilla/lib/CHIP8.cpp > CMakeFiles/Tortilla.dir/CHIP8.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/connor/Documents/GitHub/Tortilla/CHIP8.cpp > CMakeFiles/Tortilla.dir/CHIP8.cpp.i
 
 CMakeFiles/Tortilla.dir/CHIP8.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tortilla.dir/CHIP8.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/connor/Documents/GitHub/Tortilla/lib/CHIP8.cpp -o CMakeFiles/Tortilla.dir/CHIP8.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/connor/Documents/GitHub/Tortilla/CHIP8.cpp -o CMakeFiles/Tortilla.dir/CHIP8.cpp.s
 
 # Object files for target Tortilla
 Tortilla_OBJECTS = \
@@ -95,7 +95,7 @@ Tortilla: CMakeFiles/Tortilla.dir/main.cpp.o
 Tortilla: CMakeFiles/Tortilla.dir/CHIP8.cpp.o
 Tortilla: CMakeFiles/Tortilla.dir/build.make
 Tortilla: CMakeFiles/Tortilla.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Tortilla"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Tortilla"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tortilla.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/Tortilla.dir/clean:
 .PHONY : CMakeFiles/Tortilla.dir/clean
 
 CMakeFiles/Tortilla.dir/depend:
-	cd /home/connor/Documents/GitHub/Tortilla/lib && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/connor/Documents/GitHub/Tortilla/lib /home/connor/Documents/GitHub/Tortilla/lib /home/connor/Documents/GitHub/Tortilla/lib /home/connor/Documents/GitHub/Tortilla/lib /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/Tortilla.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/connor/Documents/GitHub/Tortilla/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/connor/Documents/GitHub/Tortilla /home/connor/Documents/GitHub/Tortilla /home/connor/Documents/GitHub/Tortilla/build /home/connor/Documents/GitHub/Tortilla/build /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles/Tortilla.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Tortilla.dir/depend
 

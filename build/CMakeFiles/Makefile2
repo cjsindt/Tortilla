@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_SOURCE_DIR = /home/connor/Documents/GitHub/Tortilla
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/lib
+CMAKE_BINARY_DIR = /home/connor/Documents/GitHub/Tortilla/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/Tortilla.dir/clean
 CMakeFiles/Tortilla.dir/all:
 	$(MAKE) -f CMakeFiles/Tortilla.dir/build.make CMakeFiles/Tortilla.dir/depend
 	$(MAKE) -f CMakeFiles/Tortilla.dir/build.make CMakeFiles/Tortilla.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles --progress-num=1,2,3 "Built target Tortilla"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles --progress-num=1,2,3 "Built target Tortilla"
 .PHONY : CMakeFiles/Tortilla.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Tortilla.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Tortilla.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/connor/Documents/GitHub/Tortilla/build/CMakeFiles 0
 .PHONY : CMakeFiles/Tortilla.dir/rule
 
 # Convenience name for target.

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/connor/Documents/GitHub/Tortilla/lib/CHIP8.cpp" "/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/Tortilla.dir/CHIP8.cpp.o"
-  "/home/connor/Documents/GitHub/Tortilla/lib/main.cpp" "/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/Tortilla.dir/main.cpp.o"
+  "/home/connor/Documents/GitHub/Tortilla/CHIP8.cpp" "/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles/Tortilla.dir/CHIP8.cpp.o"
+  "/home/connor/Documents/GitHub/Tortilla/main.cpp" "/home/connor/Documents/GitHub/Tortilla/build/CMakeFiles/Tortilla.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

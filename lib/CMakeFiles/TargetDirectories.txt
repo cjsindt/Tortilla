@@ -1,3 +1,0 @@
-/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/rebuild_cache.dir
-/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/edit_cache.dir
-/home/connor/Documents/GitHub/Tortilla/lib/CMakeFiles/Tortilla.dir
