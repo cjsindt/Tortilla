@@ -30,6 +30,9 @@ Starting development on CHIP-8. Had to start by making sure my project would bui
 
 Once I ran the executable, "test" showed up, so things seem to be working.
 
+I also needed command line arguments for the user to specify which rom to be loaded.
+So I made it so I can parse a file path from the command line.
+
 ### Accomplishments
 
 - CMake files and build testing
