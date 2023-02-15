@@ -47,6 +47,9 @@ The user can now specify a rom to load and it will be loaded into the CHIP8 RAM.
 
 Up next, instruction parsing.
 
+Started with making an OpCode class, because instructions are two bytes long and RAM is byte addressed.
+All this class does is allow two bytes to be stored and accessed via their high and low bytes.
+
 ### Accomplishments
 
 - CMake files and build testing
@@ -54,3 +57,4 @@ Up next, instruction parsing.
 - Stream rom data
 - Load ROM into RAM
 - Start of instruction parsing
+- OpCode class
