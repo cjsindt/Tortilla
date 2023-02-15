@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstddef>
 #include <bitset>
-#include "rom.h"
-#include "OpCode.h"
-#include "Display.h"
+#include "helpers/rom.h"
+#include "helpers/OpCode.h"
+#include "helpers/Display.h"
 
 using namespace std;
 
