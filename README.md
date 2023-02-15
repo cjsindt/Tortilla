@@ -52,6 +52,8 @@ All this class does is allow two bytes to be stored so opcodes can be accessed v
 
 Then, I made functions for each of the instructions. The idea being I can parse an opcode then call the correct instruction in a switch statement.
 
+Some instructions deal with the display, so I made a simple display class to handle those actions. I will add functionality as I develop the instructions.
+
 ### Accomplishments
 
 - CMake files and build testing
@@ -60,3 +62,4 @@ Then, I made functions for each of the instructions. The idea being I can parse 
 - Load ROM into RAM
 - Start of instruction parsing
 - OpCode class
+- Display class
