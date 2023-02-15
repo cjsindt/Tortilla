@@ -31,8 +31,14 @@ void CHIP8::loadFontset(){
     }
 }
 
-Instruction CHIP8::parseOpCode(OpCode opcode){
-    switch(opcode.high()){
+Instruction CHIP8::parseOpCode(OpCode op){
+    switch(op.high()){
+        case 0x00:
+            switch(op.low()){
+                case 0xE0: CLS();
+                case 0xEE: return Instruction::RET;
+                default: return Instruction::NIL;
+            }
         default: return Instruction::NIL;
     }
 }

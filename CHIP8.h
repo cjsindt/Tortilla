@@ -105,6 +105,41 @@ class CHIP8{
 
         void loadROM(string data);
 
-        Instruction parseOpCode(OpCode opcode);
+        Instruction parseOpCode(OpCode op);
+
+        // Instruction set
+        void CLS(OpCode op);
+        void RET(OpCode op);
+        void SYS_addr(OpCode op);
+        void JP_addr(OpCode op);
+        void CALL_addr(OpCode op);
+        void SE_Vx_byte(OpCode op);
+        void SNE_Vx_byte(OpCode op);
+        void SE_Vx_Vy(OpCode op);
+        void LD_Vx_byte(OpCode op);
+        void ADD_Vx_byte(OpCode op);
+        void LD_Vx_Vy(OpCode op);
+        void OR_Vx_Vy(OpCode op);
+        void AND_Vx_Vy(OpCode op);
+        void XOR_Vx_Vy(OpCode op);
+        void ADD_Vx_Vy(OpCode op);
+        void SUB_Vx_Vy(OpCode op);
+        void SHR_Vx_Vy(OpCode op);
+        void SUBN_Vx_Vy(OpCode op);
+        void LD_I_addr(OpCode op);
+        void JP_V0_addr(OpCode op);
+        void RND_Vx_byte(OpCode op);
+        void DRW_Vx_Vy_nibble(OpCode op);
+        void SKP_Vx(OpCode op);
+        void SKNP_Vx(OpCode op);
+        void LD_Vx_DT(OpCode op);
+        void LD_Vx_K(OpCode op);
+        void LD_DT_Vx(OpCode op);
+        void LD_ST_Vx(OpCode op);
+        void ADD_I_Vx(OpCode op);
+        void LD_F_Vx(OpCode op);
+        void LD_B_Vx(OpCode op);
+        void LD_I_Vx(OpCode op);
+        void LD_Vx_I(OpCode op);
 
 };
