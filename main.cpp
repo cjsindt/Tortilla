@@ -12,9 +12,8 @@ int main(int argc, char** argv){
         exit(-1);
     } else {
         cout << "Loading ROM from " << argv[1] << endl;
-        if(!r.openFile(argv[1])){
-            cout << "file found" << endl;
-        }
+        r.openFile(argv[1]);
+        cout << r.data() << endl;
     }
     
 

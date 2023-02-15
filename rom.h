@@ -8,7 +8,7 @@ class rom{
     public:
         bool openFile(char* filePath);
         std::string data();
-        //~rom();
+        ~rom();
 
     private:
         std::ifstream rom_stream;

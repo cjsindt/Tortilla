@@ -20,5 +20,13 @@ bool rom::openFile(char* filePath){
 }
 
 std::string rom::data(){
-    
+    std::ostringstream ss;
+    ss << rom_stream.rdbuf();
+    return ss.str();
+}
+
+rom::~rom(){
+    if(rom_stream){
+        rom_stream.close();
+    }
 }
