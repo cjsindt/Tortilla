@@ -37,4 +37,5 @@ So I made it so I can parse a file path from the command line.
 
 - CMake files and build testing
 - Command line arguments and test rom
+- Stream rom data
 
