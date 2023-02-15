@@ -1,6 +1,6 @@
 #include "OpCode.h"
 
-OpCode::OpCode(unsigned short high_byte, unsigned short low_byte){
+OpCode::OpCode(uint8_t high_byte, uint8_t low_byte){
     high = high_byte;
     low = low_byte;
 }
