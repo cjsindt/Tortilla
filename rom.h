@@ -10,4 +10,7 @@ class rom{
         std::string data();
         //~rom();
 
+    private:
+        std::ifstream rom_stream;
+
 };

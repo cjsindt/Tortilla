@@ -1,10 +1,18 @@
 #include "rom.h"
 
 bool rom::openFile(char* filePath){
-    std::ifstream rom_stream;
-    rom_stream.open(filePath);
+    rom_stream.open(filePath, std::ios::binary);
 
     if(!rom_stream){
+        return false;
+    }
+
+    long rom_size = rom_stream.tellg();
+    rom_stream.seekg(0);
+
+    // check if rom is empty or too big for RAM
+    // 0xDFF = 3583 = 4095 (Total RAM) - 512 (Reserved RAM)
+    if(rom_size == 0 || rom_size > 0xDFF){
         return false;
     }
 
@@ -12,5 +20,5 @@ bool rom::openFile(char* filePath){
 }
 
 std::string rom::data(){
-
+    
 }
