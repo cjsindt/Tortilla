@@ -3,6 +3,8 @@ CHIP-8 Interpreter
 
 This was made as a part of my undergraduate senior capstone.
 
+For a great spec of CHIP8, see (here)[http://devernay.free.fr/hacks/chip8/C8TECH10.HTM]
+
 # Build with CMake
 
 Clone the repository into your favorite folder.
