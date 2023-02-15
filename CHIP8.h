@@ -52,6 +52,10 @@ class CHIP8{
 
         uint8_t DISPLAY[SCREEN_HEIGHT][SCREEN_WIDTH];   // Display pixels
 
+        enum Instructions{
+            
+        };
+
 
     public:
         CHIP8();
@@ -61,7 +65,15 @@ class CHIP8{
         /// @param max ending addr
         void printRAM(int min, int max);
 
-        void loadROM();
+        void clearRAM();
+
+        void loadFontset();
+
+        void loadROM(string data);
 
         void parseInstruction();
+
+
+
+
 };
