@@ -43,9 +43,14 @@ Once I ran the executable, "test" showed up, so things seem to be working.
 I also needed command line arguments for the user to specify which rom to be loaded.
 So I made it so I can parse a file path from the command line.
 
+The user can now specify a rom to load and it will be loaded into the CHIP8 RAM.
+
+Up next, instruction parsing.
+
 ### Accomplishments
 
 - CMake files and build testing
 - Command line arguments and test rom
 - Stream rom data
-
+- Load ROM into RAM
+- Start of instruction parsing
