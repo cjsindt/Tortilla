@@ -24,6 +24,14 @@ make
 
 At this point you should have an executable located at build/Tortilla
 
+# Running Tortilla
+
+Once you have the executable, you need to pass it a rom to execute.
+
+```
+./Tortilla <rom_file_path>
+```
+
 # Progress Updates
 
 ## Feb 2 - Feb 16
