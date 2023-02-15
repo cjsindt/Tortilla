@@ -30,3 +30,9 @@ void CHIP8::loadFontset(){
         RAM[i] = FONTSET[i];
     }
 }
+
+Instruction CHIP8::parseInstruction(OpCode opcode){
+    switch(opcode.High()){
+        default: return Instruction::NIL;
+    }
+}
