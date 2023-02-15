@@ -11,18 +11,14 @@ int main(int argc, char** argv){
     if(argc==1){
         cout << "No ROM file given" << endl;
         exit(-1);
-    } else {
-        cout << "Loading ROM from " << argv[1] << endl;
-        r.openFile(argv[1]);
     }
+
+    cout << "Loading ROM from " << argv[1] << endl;
+    r.openFile(argv[1]);
 
     chip8.loadROM(r.data());
     
     chip8.printRAM(PROG_START, TOTAL_RAM);
-
-    //chip8.printRAM(0, 4096);
-
-    //sf::RenderWindow window(sf::VideoMode(800,600), "Tortilla");    // Game Window
-
+    
     return 0;
 }
