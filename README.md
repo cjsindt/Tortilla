@@ -38,7 +38,7 @@ Once you have the executable, you need to pass it a rom to execute.
 
 Starting development on CHIP-8. Had to start by making sure my project would build with cmake. Tested this by printing "test" to the console.
 
-Once I ran the executable, "test" showed up, so things seem to be working.
+I was able to build an executable and, once I ran it, "test" showed up, so things seem to be working.
 
 I also needed command line arguments for the user to specify which rom to be loaded.
 So I made it so I can parse a file path from the command line.
