@@ -3,6 +3,7 @@
 #include <bitset>
 #include "rom.h"
 #include "OpCode.h"
+#include "Display.h"
 
 using namespace std;
 
@@ -89,6 +90,8 @@ class CHIP8{
         uint16_t CURR_OP;           // Current op code
 
         uint8_t DISPLAY[SCREEN_HEIGHT][SCREEN_WIDTH];   // Display pixels
+
+        Display screen;
 
 
     public:

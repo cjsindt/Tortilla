@@ -1,5 +1,4 @@
 #include "CHIP8.h"
-#include <SFML/Graphics.hpp>
 
 using namespace std;
 
