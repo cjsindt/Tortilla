@@ -50,7 +50,7 @@ Up next, instruction parsing.
 Started with making an OpCode class, because instructions are two bytes long and RAM is byte addressed.
 All this class does is allow two bytes to be stored so opcodes can be accessed via their high and low bytes.
 
-Then, I made functions for each of the instructions. The idea being I can parse an opcode, then call the correct instruction in a switch statement.
+Then, I made functions for each of the instructions. The idea being I can parse an opcode then call the correct instruction in a switch statement.
 
 ### Accomplishments
 
