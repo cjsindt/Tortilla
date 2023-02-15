@@ -105,6 +105,6 @@ class CHIP8{
 
         void loadROM(string data);
 
-        Instruction parseInstruction(OpCode opcode);
+        Instruction parseOpCode(OpCode opcode);
 
 };

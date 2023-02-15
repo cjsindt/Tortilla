@@ -31,7 +31,7 @@ void CHIP8::loadFontset(){
     }
 }
 
-Instruction CHIP8::parseInstruction(OpCode opcode){
+Instruction CHIP8::parseOpCode(OpCode opcode){
     switch(opcode.High()){
         default: return Instruction::NIL;
     }
