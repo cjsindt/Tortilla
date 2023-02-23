@@ -4,6 +4,10 @@ CHIP8::CHIP8(){
     clearRAM();
     loadFontset();
     PC = PROG_START; // Set Program counter to proper location
+
+    // init stack
+    SP = 0;
+    STACK[0] = 0;
 }
 
 void CHIP8::printRAM(int min, int max){
@@ -48,6 +52,14 @@ Instruction CHIP8::parseOpCode(OpCode op){
 
 // INSTRUCTIONS
 
+// clear screen
 void CHIP8::CLS(OpCode op){
-
+    screen.Clear();
 }
+
+// return to previous call (addr at top of stack)
+void CHIP8::RET(OpCode op){
+    PC = STACK[SP];
+    SP--;
+}
+

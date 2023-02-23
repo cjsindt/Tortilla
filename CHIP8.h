@@ -144,5 +144,4 @@ class CHIP8{
         void LD_B_Vx(OpCode op);
         void LD_I_Vx(OpCode op);
         void LD_Vx_I(OpCode op);
-
 };
