@@ -59,7 +59,10 @@ void CHIP8::CLS(OpCode op){
 
 // return to previous call (addr at top of stack)
 void CHIP8::RET(OpCode op){
-    PC = STACK[SP];
-    SP--;
+    PC = STACK[SP--];
 }
 
+// jump to machine routine at addr
+void CHIP8::SYS_addr(OpCode op){
+    PC = op.full();
+}
