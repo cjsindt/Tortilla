@@ -108,6 +108,8 @@ class CHIP8{
 
         void loadROM(string data);
 
+        uint16_t getInstruction(uint16_t addr);
+
         Instruction parseOpCode(OpCode op);
 
         // Instruction set
@@ -144,4 +146,5 @@ class CHIP8{
         void LD_B_Vx(OpCode op);
         void LD_I_Vx(OpCode op);
         void LD_Vx_I(OpCode op);
+        void NIL(); // unknown opcode
 };

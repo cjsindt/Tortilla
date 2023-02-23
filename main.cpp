@@ -19,6 +19,10 @@ int main(int argc, char** argv){
     chip8.loadROM(r.data());
     
     chip8.printRAM(PROG_START, TOTAL_RAM);
+
+    // while(true){
+    //     uint16_t curr_opcode = chip8.getInstruction(0);
+    // }
     
     return 0;
 }

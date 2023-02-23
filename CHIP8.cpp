@@ -39,14 +39,16 @@ void CHIP8::loadFontset(){
 
 // A parsing function to determine which hex value is which opcode
 Instruction CHIP8::parseOpCode(OpCode op){
-    switch(op.high()){
+    switch(op.instr()){
         case 0x00:
-            switch(op.low()){
+            switch(op.value()){
                 case 0xE0: CLS(op);
-                case 0xEE: return Instruction::RET;
-                default: return Instruction::NIL;
+                case 0xEE: RET(op);
+                default: SYS_addr(op);
             }
-        default: return Instruction::NIL;
+        case 0x10:
+
+        default: NIL();
     }
 }
 
@@ -64,5 +66,9 @@ void CHIP8::RET(OpCode op){
 
 // jump to machine routine at addr
 void CHIP8::SYS_addr(OpCode op){
-    PC = op.full();
+    PC = op.value();
+}
+
+void CHIP8::NIL(){
+
 }
