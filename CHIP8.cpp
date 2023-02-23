@@ -19,18 +19,21 @@ void CHIP8::loadROM(string data){
     }
 }
 
+// Clear the contents of RAM
 void CHIP8::clearRAM(){
     for(int i = 0; i < TOTAL_RAM; i++){
         RAM[i] = 0;
     }
 }
 
+// Load fontset into RAM
 void CHIP8::loadFontset(){
     for(int i = 0; i < FONTSET_SIZE; i++){
         RAM[i] = FONTSET[i];
     }
 }
 
+// A parsing function to determine which hex value is which opcode
 Instruction CHIP8::parseOpCode(OpCode op){
     switch(op.high()){
         case 0x00:
@@ -42,6 +45,8 @@ Instruction CHIP8::parseOpCode(OpCode op){
         default: return Instruction::NIL;
     }
 }
+
+// INSTRUCTIONS
 
 void CHIP8::CLS(OpCode op){
 
