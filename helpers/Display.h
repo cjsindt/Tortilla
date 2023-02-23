@@ -6,6 +6,8 @@ class Display{
     public:
         Display();
 
+        void Clear();
+
     private:
         RenderWindow* window;
 
