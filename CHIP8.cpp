@@ -83,6 +83,12 @@ void CHIP8::parseOpCode(OpCode op){
         case 0x05:
             SE_Vx_Vy(op);
             break;
+
+        case 0x06:
+            LD_Vx_byte(op);
+            break;
+
+        
         
         default: NIL();
     }
@@ -122,8 +128,62 @@ void CHIP8::SNE_Vx_byte(OpCode op){
 }
 
 void CHIP8::SE_Vx_Vy(OpCode op){
-    
+
 }
+
+void CHIP8::LD_Vx_byte(OpCode op){
+
+}
+
+void CHIP8::ADD_Vx_byte(OpCode op){
+}
+void CHIP8::LD_Vx_Vy(OpCode op){
+}
+void CHIP8::OR_Vx_Vy(OpCode op){
+}
+void CHIP8::AND_Vx_Vy(OpCode op){
+}
+void CHIP8::XOR_Vx_Vy(OpCode op){
+}
+void CHIP8::ADD_Vx_Vy(OpCode op){
+}
+void CHIP8::SUB_Vx_Vy(OpCode op){
+}
+void CHIP8::SHR_Vx_Vy(OpCode op){
+}
+void CHIP8::SUBN_Vx_Vy(OpCode op){
+}
+void CHIP8::LD_I_addr(OpCode op){
+}
+void CHIP8::JP_V0_addr(OpCode op){
+}
+void CHIP8::RND_Vx_byte(OpCode op){
+}
+void CHIP8::DRW_Vx_Vy_nibble(OpCode op){
+}
+void CHIP8::SKP_Vx(OpCode op){
+}
+void CHIP8::SKNP_Vx(OpCode op){
+}
+void CHIP8::LD_Vx_DT(OpCode op){
+}
+void CHIP8::LD_Vx_K(OpCode op){
+}
+void CHIP8::LD_DT_Vx(OpCode op){
+}
+void CHIP8::LD_ST_Vx(OpCode op){
+}
+void CHIP8::ADD_I_Vx(OpCode op){
+}
+void CHIP8::LD_F_Vx(OpCode op){
+}
+void CHIP8::LD_B_Vx(OpCode op){
+}
+void CHIP8::LD_I_Vx(OpCode op){
+}
+void CHIP8::LD_Vx_I(OpCode op){
+}
+
 
 void CHIP8::NIL(){
 
