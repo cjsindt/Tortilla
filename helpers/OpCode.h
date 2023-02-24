@@ -1,5 +1,7 @@
 #include <stdint.h>
 
+// CHIP8 opcodes follow a format of Nxxx
+// Where N denotes the instruction, and xxx is the value for that instruciton
 class OpCode{
     public:
         OpCode(uint16_t hex);

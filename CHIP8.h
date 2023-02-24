@@ -108,9 +108,9 @@ class CHIP8{
 
         void loadROM(string data);
 
-        uint16_t getInstruction(uint16_t addr);
+        uint16_t getInstruction();
 
-        Instruction parseOpCode(OpCode op);
+        void parseOpCode(OpCode op);
 
         // Instruction set
         void CLS(OpCode op);

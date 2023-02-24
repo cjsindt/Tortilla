@@ -37,17 +37,53 @@ void CHIP8::loadFontset(){
     }
 }
 
+// Returns the instr at the PC
+uint16_t CHIP8::getInstruction(){
+    if(PC < TOTAL_RAM){
+        return RAM[PC++];
+    } else {
+        return RAM[PC];
+    }
+
+}
+
 // A parsing function to determine which hex value is which opcode
-Instruction CHIP8::parseOpCode(OpCode op){
+void CHIP8::parseOpCode(OpCode op){
     switch(op.instr()){
         case 0x00:
             switch(op.value()){
-                case 0xE0: CLS(op);
-                case 0xEE: RET(op);
-                default: SYS_addr(op);
+                case 0xE0:
+                    CLS(op);
+                    break;
+                case 0xEE:
+                    RET(op);
+                    break;
+                default:
+                    SYS_addr(op);
+                    break;
             }
-        case 0x10:
+            break;
 
+        case 0x01:
+             JP_addr(op);
+             break;
+        
+        case 0x02:
+            CALL_addr(op);
+            break;
+        
+        case 0x03:
+            SE_Vx_byte(op);
+            break;
+
+        case 0x04:
+            SNE_Vx_byte(op);
+            break;
+
+        case 0x05:
+            SE_Vx_Vy(op);
+            break;
+        
         default: NIL();
     }
 }
@@ -67,6 +103,26 @@ void CHIP8::RET(OpCode op){
 // jump to machine routine at addr
 void CHIP8::SYS_addr(OpCode op){
     PC = op.value();
+}
+
+void CHIP8::JP_addr(OpCode op){
+
+}
+
+void CHIP8::CALL_addr(OpCode op){
+
+}
+
+void CHIP8::SE_Vx_byte(OpCode op){
+
+}
+
+void CHIP8::SNE_Vx_byte(OpCode op){
+
+}
+
+void CHIP8::SE_Vx_Vy(OpCode op){
+    
 }
 
 void CHIP8::NIL(){

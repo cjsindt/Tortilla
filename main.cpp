@@ -20,9 +20,10 @@ int main(int argc, char** argv){
     
     chip8.printRAM(PROG_START, TOTAL_RAM);
 
-    // while(true){
-    //     uint16_t curr_opcode = chip8.getInstruction(0);
-    // }
+    while(true){
+        uint16_t curr_opcode = chip8.getInstruction();
+        cout << curr_opcode << endl;
+    }
     
     return 0;
 }
