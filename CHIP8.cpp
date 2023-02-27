@@ -88,9 +88,56 @@ void CHIP8::parseOpCode(OpCode op){
             LD_Vx_byte(op);
             break;
 
+        case 0x07:
+            ADD_Vx_byte(op);
+            break;
+
+        case 0x08:
+            switch(op.value() & 0x000F){ // switch on last nibble
+                case 0x0:
+                    LD_Vx_Vy(op);
+                    break;
+                
+                case 0x1:
+                    OR_Vx_Vy(op);
+                    break;
+
+                case 0x2:
+                    AND_Vx_Vy(op);
+                    break;
+                
+                case 0x3:
+                    XOR_Vx_Vy(op);
+                    break;
+
+                case 0x4:
+                    ADD_Vx_Vy(op);
+                    break;
+
+                case 0x5:
+                    SUB_Vx_Vy(op);
+                    break;
+
+                case 0x6:
+                    SHR_Vx_Vy(op);
+                    break;
+
+                case 0x7:
+                    SUBN_Vx_Vy(op);
+                    break;
+
+                case 0xE:
+                    SHL_Vx_Vy(op);
+                    break;
+                
+                default:
+                    NIL();
+                    break;
+            }
         
-        
-        default: NIL();
+        default:
+            NIL();
+            break;
     }
 }
 
@@ -152,6 +199,9 @@ void CHIP8::SUB_Vx_Vy(OpCode op){
 void CHIP8::SHR_Vx_Vy(OpCode op){
 }
 void CHIP8::SUBN_Vx_Vy(OpCode op){
+}
+void CHIP8::SHL_Vx_Vy(OpCode op){
+
 }
 void CHIP8::LD_I_addr(OpCode op){
 }
