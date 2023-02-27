@@ -94,39 +94,39 @@ void CHIP8::parseOpCode(OpCode op){
 
         case 0x08:
             switch(op.value() & 0x000F){ // switch on last nibble
-                case 0x0:
+                case 0x00:
                     LD_Vx_Vy(op);
                     break;
                 
-                case 0x1:
+                case 0x01:
                     OR_Vx_Vy(op);
                     break;
 
-                case 0x2:
+                case 0x02:
                     AND_Vx_Vy(op);
                     break;
                 
-                case 0x3:
+                case 0x03:
                     XOR_Vx_Vy(op);
                     break;
 
-                case 0x4:
+                case 0x04:
                     ADD_Vx_Vy(op);
                     break;
 
-                case 0x5:
+                case 0x05:
                     SUB_Vx_Vy(op);
                     break;
 
-                case 0x6:
+                case 0x06:
                     SHR_Vx_Vy(op);
                     break;
 
-                case 0x7:
+                case 0x07:
                     SUBN_Vx_Vy(op);
                     break;
 
-                case 0xE:
+                case 0x0E:
                     SHL_Vx_Vy(op);
                     break;
                 
@@ -134,6 +134,83 @@ void CHIP8::parseOpCode(OpCode op){
                     NIL();
                     break;
             }
+            break;
+
+        case 0x09:
+            SNE_Vx_Vy(op);
+            break;
+
+        case 0x0A:
+            LD_I_addr(op);
+            break;
+
+        case 0x0B:
+            JP_V0_addr(op);
+            break;
+
+        case 0x0C:
+            RND_Vx_byte(op);
+            break;
+
+        case 0x0D:
+            DRW_Vx_Vy_nibble(op);
+            break;
+
+        case 0x0E:
+            switch(op.value() & 0x00FF){
+                case 0x9E:
+                    SKP_Vx(op);
+                    break;
+                
+                case 0xA1:
+                    SKNP_Vx(op);
+                    break;
+            }
+            break;
+        
+        case 0x0F:
+            switch(op.value() & 0x00FF){
+                case 0x07:
+                    LD_Vx_DT(op);
+                    break;
+
+                case 0x0A:
+                    LD_Vx_K(op);
+                    break;
+
+                case 0x15:
+                    LD_DT_Vx(op);
+                    break;
+
+                case 0x18:
+                    LD_ST_Vx(op);
+                    break;
+                
+                case 0x1E:
+                    ADD_I_Vx(op);
+                    break;
+
+                case 0x29:
+                    LD_F_Vx(op);
+                    break;
+
+                case 0x33:
+                    LD_B_Vx(op);
+                    break;
+                
+                case 0x55:
+                    LD_I_Vx(op);
+                    break;
+
+                case 0x65: 
+                    LD_Vx_I(op);
+                    break;
+
+                default:
+                    NIL();
+                    break;
+            }
+            break;
         
         default:
             NIL();

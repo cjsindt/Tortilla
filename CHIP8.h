@@ -131,6 +131,8 @@ class CHIP8{
         void SUB_Vx_Vy(OpCode op);
         void SHR_Vx_Vy(OpCode op);
         void SUBN_Vx_Vy(OpCode op);
+        void SHL_Vx_Vy(OpCode op);
+        void SNE_Vx_Vy(OpCode op);
         void LD_I_addr(OpCode op);
         void JP_V0_addr(OpCode op);
         void RND_Vx_byte(OpCode op);
