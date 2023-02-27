@@ -18,11 +18,12 @@ int main(int argc, char** argv){
 
     chip8.loadROM(r.data());
     
-    chip8.printRAM(PROG_START, TOTAL_RAM);
+    //chip8.printRAM(PROG_START, TOTAL_RAM);
 
-    while(true){
+    for(int i = 0; i < 100; i++){
         uint16_t curr_opcode = chip8.getInstruction();
         cout << curr_opcode << endl;
+        chip8.parseOpCode(curr_opcode);
     }
     
     return 0;

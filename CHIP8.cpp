@@ -40,11 +40,15 @@ void CHIP8::loadFontset(){
 // Returns the instr at the PC
 uint16_t CHIP8::getInstruction(){
     if(PC < TOTAL_RAM){
-        return RAM[PC++];
+        return (RAM[PC++] << 8) | RAM[PC++];
     } else {
         return RAM[PC];
     }
 
+}
+
+void CHIP8::print(string s){
+    cout << s << endl;
 }
 
 // A parsing function to determine which hex value is which opcode
@@ -228,90 +232,121 @@ void CHIP8::CLS(OpCode op){
 // return to previous call (addr at top of stack)
 void CHIP8::RET(OpCode op){
     PC = STACK[SP--];
+    print("ret");
 }
 
 // jump to machine routine at addr
 void CHIP8::SYS_addr(OpCode op){
     PC = op.value();
+    print("sys");
 }
 
 void CHIP8::JP_addr(OpCode op){
-
+    print("jp");
 }
 
 void CHIP8::CALL_addr(OpCode op){
-
+    print("call");
 }
 
 void CHIP8::SE_Vx_byte(OpCode op){
-
+    print("se");
 }
 
 void CHIP8::SNE_Vx_byte(OpCode op){
-
+    print("sne");
 }
 
 void CHIP8::SE_Vx_Vy(OpCode op){
-
+    print("sevxvy");
 }
 
 void CHIP8::LD_Vx_byte(OpCode op){
-
+    print("ld");
 }
 
 void CHIP8::ADD_Vx_byte(OpCode op){
+    print("add");
 }
 void CHIP8::LD_Vx_Vy(OpCode op){
+    print("ldvxvy");
 }
 void CHIP8::OR_Vx_Vy(OpCode op){
+    print("or");
 }
 void CHIP8::AND_Vx_Vy(OpCode op){
+    print("and");
 }
 void CHIP8::XOR_Vx_Vy(OpCode op){
+    print("xor");
 }
 void CHIP8::ADD_Vx_Vy(OpCode op){
+    print("addvxvy");
 }
 void CHIP8::SUB_Vx_Vy(OpCode op){
+    print("sub");
 }
 void CHIP8::SHR_Vx_Vy(OpCode op){
+    print("shr");
 }
 void CHIP8::SUBN_Vx_Vy(OpCode op){
+    print("subn");
 }
 void CHIP8::SHL_Vx_Vy(OpCode op){
+    print("shl");
 
 }
+void CHIP8::SNE_Vx_Vy(OpCode op){
+    print("snevxvy");
+}
 void CHIP8::LD_I_addr(OpCode op){
+    print("ldiaddr");
 }
 void CHIP8::JP_V0_addr(OpCode op){
+    print("jpv0");
 }
 void CHIP8::RND_Vx_byte(OpCode op){
+    print("rnd");
 }
 void CHIP8::DRW_Vx_Vy_nibble(OpCode op){
+    print("drw");
 }
 void CHIP8::SKP_Vx(OpCode op){
+    print("skp");
 }
 void CHIP8::SKNP_Vx(OpCode op){
+    print("sknp");
 }
 void CHIP8::LD_Vx_DT(OpCode op){
+    print("ldvxdt");
 }
 void CHIP8::LD_Vx_K(OpCode op){
+    print("ldvxk");
 }
 void CHIP8::LD_DT_Vx(OpCode op){
+    print("lddtvx");
 }
 void CHIP8::LD_ST_Vx(OpCode op){
+    print("ldstvx");
 }
 void CHIP8::ADD_I_Vx(OpCode op){
+    print("addivx");
 }
 void CHIP8::LD_F_Vx(OpCode op){
+    print("ldfvx");
 }
 void CHIP8::LD_B_Vx(OpCode op){
+    print("ldbvx");
 }
 void CHIP8::LD_I_Vx(OpCode op){
+    print("ldivx");
 }
 void CHIP8::LD_Vx_I(OpCode op){
+    print("ldvxi");
 }
 
 
 void CHIP8::NIL(){
+    print("NIL");
 
 }

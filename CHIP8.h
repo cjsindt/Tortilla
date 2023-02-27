@@ -112,6 +112,8 @@ class CHIP8{
 
         void parseOpCode(OpCode op);
 
+        void print(string s);
+
         // Instruction set
         void CLS(OpCode op);
         void RET(OpCode op);
