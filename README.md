@@ -34,6 +34,17 @@ Once you have the executable, you need to pass it a rom to execute.
 
 # Progress Updates
 
+## Feb 16 - Mar 2
+
+Made a parse tree for the different opcodes to be decoded into their respective instruction calls. These instruction calls are represented as methods in the CHIP8 class.
+
+Up next is to fill out those instructions and test to see if the parse tree is working.
+
+### Accomplishments
+
+- Instruction parse tree
+- Fixed OpCode class
+
 ## Feb 2 - Feb 16
 
 Starting development on CHIP-8. Had to start by making sure my project would build with cmake. Tested this by printing "test" to the console.
