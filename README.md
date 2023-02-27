@@ -40,10 +40,13 @@ Made a parse tree for the different opcodes to be decoded into their respective 
 
 Up next is to fill out those instructions and test to see if the parse tree is working.
 
+When testing the parse tree, I noticed that the instruction was being read one byte at a time, so I fixed that. Now instructions are reading correctly. The only way to know if it is actually working is to get a display running.
+
 ### Accomplishments
 
 - Instruction parse tree
 - Fixed OpCode class
+- Fix instruction reading (was reading one byte, not two)
 
 ## Feb 2 - Feb 16
 
