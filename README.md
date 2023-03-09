@@ -34,7 +34,7 @@ Once you have the executable, you need to pass it a rom to execute.
 
 # Progress Updates
 
-## Feb 16 - Mar 2
+## Feb 16 - Mar 9
 
 Made a parse tree for the different opcodes to be decoded into their respective instruction calls. These instruction calls are represented as methods in the CHIP8 class.
 
