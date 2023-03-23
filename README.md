@@ -34,6 +34,14 @@ Once you have the executable, you need to pass it a rom to execute.
 
 # Progress Updates
 
+## Mar 9 - Mar 30
+
+I decided to work on the display code first so I could try and see my progress as I worked. I started by setting an array of Rectangles of 64x32 to match the size of the CHIP8 screen. The actual display is 640x320, so mapping the pixels to the screen is a simple 1:10 ratio.
+
+### Accomplishments
+
+- Display white bars
+
 ## Feb 16 - Mar 9
 
 Made a parse tree for the different opcodes to be decoded into their respective instruction calls. These instruction calls are represented as methods in the CHIP8 class.
