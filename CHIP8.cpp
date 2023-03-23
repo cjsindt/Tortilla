@@ -51,6 +51,10 @@ void CHIP8::print(string s){
     cout << s << endl;
 }
 
+bool CHIP8::isOpen(){
+    return screen.isOpen();
+}
+
 // A parsing function to determine which hex value is which opcode
 void CHIP8::parseOpCode(OpCode op){
     switch(op.instr()){
@@ -226,7 +230,7 @@ void CHIP8::parseOpCode(OpCode op){
 
 // clear screen
 void CHIP8::CLS(OpCode op){
-    screen.Clear();
+    screen.clear();
 }
 
 // return to previous call (addr at top of stack)

@@ -76,6 +76,8 @@ class CHIP8{
 
         void print(string s);
 
+        bool isOpen();
+
         // Instruction set
         void CLS(OpCode op);
         void RET(OpCode op);

@@ -17,14 +17,20 @@ int main(int argc, char** argv){
     r.openFile(argv[1]);
 
     chip8.loadROM(r.data());
+
+    cout << "here " << chip8.isOpen() << endl;
+
+    while(chip8.isOpen()){
+        cout << "hi" << endl;
+    }
     
     //chip8.printRAM(PROG_START, TOTAL_RAM);
 
-    for(int i = 0; i < 100; i++){
-        uint16_t curr_opcode = chip8.getInstruction();
-        cout << curr_opcode << endl;
-        chip8.parseOpCode(curr_opcode);
-    }
+    // for(int i = 0; i < 100; i++){
+    //     uint16_t curr_opcode = chip8.getInstruction();
+    //     cout << curr_opcode << endl;
+    //     chip8.parseOpCode(curr_opcode);
+    // }
     
     return 0;
 }
