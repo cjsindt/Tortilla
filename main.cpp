@@ -1,4 +1,5 @@
 #include "CHIP8.h"
+#include <unistd.h> 
 
 using namespace std;
 
@@ -18,10 +19,10 @@ int main(int argc, char** argv){
 
     chip8.loadROM(r.data());
 
-    cout << "here " << chip8.isOpen() << endl;
+    chip8.paint();
 
     while(chip8.isOpen()){
-        cout << "hi" << endl;
+        sleep(1);
     }
     
     //chip8.printRAM(PROG_START, TOTAL_RAM);

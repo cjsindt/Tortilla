@@ -51,6 +51,10 @@ void CHIP8::print(string s){
     cout << s << endl;
 }
 
+void CHIP8::paint(){
+    screen.paint();
+}
+
 bool CHIP8::isOpen(){
     return screen.isOpen();
 }

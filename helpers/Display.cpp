@@ -9,6 +9,7 @@ Display::Display(){
         pixels.push_back(std::vector<RectangleShape>());
         for(int c = 0; c < 64; c++){
             pixels[r].push_back(RectangleShape(Vector2f(10,10)));
+            pixels[r][c].setPosition(Vector2f(c*10, r*10));
             if(c%2==0){
                 pixels[r][c].setFillColor(Color(Color::Black));
             } else {
@@ -25,9 +26,10 @@ void Display::clear(){
 void Display::paint(){
     for(int r = 0; r < pixels.size(); r++){
         for(int c = 0; c < pixels[r].size(); c++){
-            
+            window->draw(pixels[r][c]);
         }
     }
+    window->display();
 }
 
 bool Display::isOpen(){

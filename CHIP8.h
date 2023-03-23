@@ -78,6 +78,8 @@ class CHIP8{
 
         bool isOpen();
 
+        void paint();
+
         // Instruction set
         void CLS(OpCode op);
         void RET(OpCode op);
