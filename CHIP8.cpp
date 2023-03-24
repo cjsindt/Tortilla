@@ -240,24 +240,30 @@ void CHIP8::CLS(OpCode op){
 // return to previous call (addr at top of stack)
 void CHIP8::RET(OpCode op){
     PC = STACK[SP--];
-    print("ret");
+    //print("ret");
 }
 
 // jump to machine routine at addr
 void CHIP8::SYS_addr(OpCode op){
     PC = op.value();
-    print("sys");
+    //print("sys");
 }
 
+// set PC to addr at value
 void CHIP8::JP_addr(OpCode op){
-    print("jp");
+    PC = op.value();
+    //print("jp");
 }
 
+// inc stack pointer by 1 and put PC on stack, then set PC to value
 void CHIP8::CALL_addr(OpCode op){
+    STACK[++SP] = PC;
+    PC = op.value();
     print("call");
 }
 
 void CHIP8::SE_Vx_byte(OpCode op){
+    
     print("se");
 }
 
