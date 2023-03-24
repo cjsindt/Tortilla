@@ -40,7 +40,9 @@ void CHIP8::loadFontset(){
 // Returns the instr at the PC
 uint16_t CHIP8::getInstruction(){
     if(PC < TOTAL_RAM){
-        return (RAM[PC++] << 8) | RAM[PC++];
+        uint16_t i = RAM[PC++] << 8;
+        i |= RAM[PC++];
+        return i;
     } else {
         return RAM[PC];
     }
@@ -259,28 +261,52 @@ void CHIP8::JP_addr(OpCode op){
 void CHIP8::CALL_addr(OpCode op){
     STACK[++SP] = PC;
     PC = op.value();
-    print("call");
+    //print("call");
 }
 
 void CHIP8::SE_Vx_byte(OpCode op){
-    
-    print("se");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    if(V[x] = op.value() & 0x00FF){
+        PC += 2;
+    }
+    //print("se");
 }
 
 void CHIP8::SNE_Vx_byte(OpCode op){
-    print("sne");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    if(V[x] != op.value() & 0x00FF){
+        PC += 2;
+    }
+    //print("sne");
 }
 
 void CHIP8::SE_Vx_Vy(OpCode op){
-    print("sevxvy");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    if(V[x] == V[y]){
+        PC += 2;
+    }
+    //print("sevxvy");
 }
 
 void CHIP8::LD_Vx_byte(OpCode op){
-    print("ld");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t kk = op.value() & 0x00FF;
+    x = x >> 8;
+    V[x] = kk;
+    //print("ld");
 }
 
 void CHIP8::ADD_Vx_byte(OpCode op){
-    print("add");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t kk = op.value() & 0x00FF;
+    x = x >> 8;
+    V[x] += kk;
+    //print("add");
 }
 void CHIP8::LD_Vx_Vy(OpCode op){
     print("ldvxvy");
