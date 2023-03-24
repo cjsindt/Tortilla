@@ -309,19 +309,48 @@ void CHIP8::ADD_Vx_byte(OpCode op){
     //print("add");
 }
 void CHIP8::LD_Vx_Vy(OpCode op){
-    print("ldvxvy");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    V[x] = V[y];
+    //print("ldvxvy");
 }
 void CHIP8::OR_Vx_Vy(OpCode op){
-    print("or");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    V[x] |= V[y];
+    //print("or");
 }
 void CHIP8::AND_Vx_Vy(OpCode op){
-    print("and");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    V[x] &= V[y];
+    //print("and");
 }
 void CHIP8::XOR_Vx_Vy(OpCode op){
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    V[x] ^= V[y];
     print("xor");
 }
 void CHIP8::ADD_Vx_Vy(OpCode op){
-    print("addvxvy");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    uint16_t sum = V[x] + V[y];
+    if(sum > 255){
+        V[0xF] = 1;
+    }
+    V[x] = sum & 0x00FF;
+    //print("addvxvy");
 }
 void CHIP8::SUB_Vx_Vy(OpCode op){
     print("sub");
