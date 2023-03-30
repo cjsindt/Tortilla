@@ -1,6 +1,7 @@
 #include "CHIP8.h"
 
 CHIP8::CHIP8(){
+    srand(time(NULL)); // seed random number generator
     clearRAM();
     loadFontset();
     PC = PROG_START; // Set Program counter to proper location
@@ -450,10 +451,17 @@ void CHIP8::JP_V0_addr(OpCode op){
     //print("jpv0");
 }
 
-
+// The interpreter generates a random number from 0 to 255, which is then ANDed with the value kk. The results are stored in Vx. See instruction 8xy2 for more information on AND.
 void CHIP8::RND_Vx_byte(OpCode op){
-    print("rnd");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t kk = op.value() & 0x00FF;
+    x = x >> 8;
+    int r = rand()%256;
+    V[x] = r & kk;
+    //print("rnd");
 }
+
+
 void CHIP8::DRW_Vx_Vy_nibble(OpCode op){
     print("drw");
 }
