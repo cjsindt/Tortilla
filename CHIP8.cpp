@@ -426,11 +426,22 @@ void CHIP8::SHL_Vx_Vy(OpCode op){
     //print("shl");
 }
 
+// The values of Vx and Vy are compared, and if they are not equal, the program counter is increased by 2.
 void CHIP8::SNE_Vx_Vy(OpCode op){
-    print("snevxvy");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    if(V[x] != V[y]){
+        PC += 2;
+    }
+    //print("snevxvy");
 }
+
+// The value of register I is set to nnn.
 void CHIP8::LD_I_addr(OpCode op){
-    print("ldiaddr");
+    I = op.value();
+    //print("ldiaddr");
 }
 void CHIP8::JP_V0_addr(OpCode op){
     print("jpv0");
