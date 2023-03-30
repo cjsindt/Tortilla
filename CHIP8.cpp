@@ -353,7 +353,12 @@ void CHIP8::ADD_Vx_Vy(OpCode op){
     //print("addvxvy");
 }
 void CHIP8::SUB_Vx_Vy(OpCode op){
-    
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    V[x] -= V[y];
+    V[0xF] = 2;
     print("sub");
 }
 void CHIP8::SHR_Vx_Vy(OpCode op){
