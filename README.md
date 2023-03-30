@@ -38,9 +38,12 @@ Once you have the executable, you need to pass it a rom to execute.
 
 I decided to work on the display code first so I could try and see my progress as I worked. I started by setting an array of Rectangles of 64x32 to match the size of the CHIP8 screen. The actual display is 640x320, so mapping the pixels to the screen is a simple 1:10 ratio.
 
+I then began writing the code for the each of the instructions. I used the spec linked at the top of this file to guide my implementation. All comments for each method comes directly from that site, thank you Cowgod.
+
 ### Accomplishments
 
 - Display white bars
+- Most instructions written
 
 ## Feb 16 - Mar 9
 
