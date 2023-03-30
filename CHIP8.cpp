@@ -347,22 +347,29 @@ void CHIP8::ADD_Vx_Vy(OpCode op){
     y = y >> 4;
     uint16_t sum = V[x] + V[y];
     if(sum > 255){
-        V[0xF] = 1;
+        V[0xF] = 0b10;
     }
     V[x] = sum & 0x00FF;
     //print("addvxvy");
 }
+
 void CHIP8::SUB_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
     x = x >> 8;
     y = y >> 4;
     V[x] -= V[y];
-    V[0xF] = 2;
-    print("sub");
+    V[0xF] = 0b100;
+    //print("sub");
 }
 void CHIP8::SHR_Vx_Vy(OpCode op){
-    print("shr");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    if(V[x]%2==1){
+        V[0xF] = 1;
+    }
+    V[x] = V[x] >> 1;
+    //print("shr");
 }
 void CHIP8::SUBN_Vx_Vy(OpCode op){
     print("subn");
