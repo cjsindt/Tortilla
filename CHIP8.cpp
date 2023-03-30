@@ -443,9 +443,14 @@ void CHIP8::LD_I_addr(OpCode op){
     I = op.value();
     //print("ldiaddr");
 }
+
+// The program counter is set to nnn plus the value of V0.
 void CHIP8::JP_V0_addr(OpCode op){
-    print("jpv0");
+    PC = op.value() + V[0];
+    //print("jpv0");
 }
+
+
 void CHIP8::RND_Vx_byte(OpCode op){
     print("rnd");
 }
