@@ -239,31 +239,32 @@ void CHIP8::CLS(OpCode op){
     screen.clear();
 }
 
-// return to previous call (addr at top of stack)
+// The interpreter sets the program counter to the address at the top of the stack, then subtracts 1 from the stack pointer.
 void CHIP8::RET(OpCode op){
     PC = STACK[SP--];
     //print("ret");
 }
 
-// jump to machine routine at addr
+// This instruction is only used on the old computers on which Chip-8 was originally implemented. It is ignored by modern interpreters.
 void CHIP8::SYS_addr(OpCode op){
     PC = op.value();
     //print("sys");
 }
 
-// set PC to addr at value
+// The interpreter sets the program counter to nnn.
 void CHIP8::JP_addr(OpCode op){
     PC = op.value();
     //print("jp");
 }
 
-// inc stack pointer by 1 and put PC on stack, then set PC to value
+// The interpreter increments the stack pointer, then puts the current PC on the top of the stack. The PC is then set to nnn.
 void CHIP8::CALL_addr(OpCode op){
     STACK[++SP] = PC;
     PC = op.value();
     //print("call");
 }
 
+// The interpreter compares register Vx to kk, and if they are not equal, increments the program counter by 2.
 void CHIP8::SE_Vx_byte(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     x = x >> 8;
@@ -273,6 +274,7 @@ void CHIP8::SE_Vx_byte(OpCode op){
     //print("se");
 }
 
+// The interpreter compares register Vx to register Vy, and if they are equal, increments the program counter by 2.
 void CHIP8::SNE_Vx_byte(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     x = x >> 8;
@@ -282,6 +284,7 @@ void CHIP8::SNE_Vx_byte(OpCode op){
     //print("sne");
 }
 
+// The interpreter compares register Vx to register Vy, and if they are equal, increments the program counter by 2.
 void CHIP8::SE_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -293,6 +296,7 @@ void CHIP8::SE_Vx_Vy(OpCode op){
     //print("sevxvy");
 }
 
+// The interpreter puts the value kk into register Vx.
 void CHIP8::LD_Vx_byte(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t kk = op.value() & 0x00FF;
@@ -301,6 +305,7 @@ void CHIP8::LD_Vx_byte(OpCode op){
     //print("ld");
 }
 
+// Adds the value kk to the value of register Vx, then stores the result in Vx. 
 void CHIP8::ADD_Vx_byte(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t kk = op.value() & 0x00FF;
@@ -308,6 +313,8 @@ void CHIP8::ADD_Vx_byte(OpCode op){
     V[x] += kk;
     //print("add");
 }
+
+// Stores the value of register Vy in register Vx.
 void CHIP8::LD_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -316,6 +323,8 @@ void CHIP8::LD_Vx_Vy(OpCode op){
     V[x] = V[y];
     //print("ldvxvy");
 }
+
+// Performs a bitwise OR on the values of Vx and Vy, then stores the result in Vx. A bitwise OR compares the corrseponding bits from two values, and if either bit is 1, then the same bit in the result is also 1. Otherwise, it is 0.
 void CHIP8::OR_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -324,6 +333,8 @@ void CHIP8::OR_Vx_Vy(OpCode op){
     V[x] |= V[y];
     //print("or");
 }
+
+// Performs a bitwise AND on the values of Vx and Vy, then stores the result in Vx. A bitwise AND compares the corrseponding bits from two values, and if both bits are 1, then the same bit in the result is also 1. Otherwise, it is 0.
 void CHIP8::AND_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -332,6 +343,8 @@ void CHIP8::AND_Vx_Vy(OpCode op){
     V[x] &= V[y];
     //print("and");
 }
+
+// Performs a bitwise exclusive OR on the values of Vx and Vy, then stores the result in Vx. An exclusive OR compares the corrseponding bits from two values, and if the bits are not both the same, then the corresponding bit in the result is set to 1. Otherwise, it is 0.
 void CHIP8::XOR_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -340,6 +353,8 @@ void CHIP8::XOR_Vx_Vy(OpCode op){
     V[x] ^= V[y];
     //print("xor");
 }
+
+// The values of Vx and Vy are added together. If the result is greater than 8 bits (i.e., > 255,) VF is set to 1, otherwise 0. Only the lowest 8 bits of the result are kept, and stored in Vx.
 void CHIP8::ADD_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -355,6 +370,7 @@ void CHIP8::ADD_Vx_Vy(OpCode op){
     //print("addvxvy");
 }
 
+// If Vx > Vy, then VF is set to 1, otherwise 0. Then Vy is subtracted from Vx, and the results stored in Vx.
 void CHIP8::SUB_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     uint16_t y = op.value() & 0x00F0;
@@ -368,6 +384,8 @@ void CHIP8::SUB_Vx_Vy(OpCode op){
     V[x] -= V[y];
     //print("sub");
 }
+
+// If the least-significant bit of Vx is 1, then VF is set to 1, otherwise 0. Then Vx is divided by 2.
 void CHIP8::SHR_Vx_Vy(OpCode op){
     uint16_t x = op.value() & 0x0F00;
     x = x >> 8;
@@ -379,13 +397,25 @@ void CHIP8::SHR_Vx_Vy(OpCode op){
     V[x] = V[x] >> 1;
     //print("shr");
 }
+
+// If Vy > Vx, then VF is set to 1, otherwise 0. Then Vx is subtracted from Vy, and the results stored in Vx.
 void CHIP8::SUBN_Vx_Vy(OpCode op){
-
-    print("subn");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    x = x >> 8;
+    y = y >> 4;
+    if(V[y] > V[x]){
+        V[0xF] = 1;
+    } else {
+        V[0xF] = 0;
+    }
+    V[x] = V[y] - V[x];
+    //print("subn");
 }
-void CHIP8::SHL_Vx_Vy(OpCode op){
-    print("shl");
 
+void CHIP8::SHL_Vx_Vy(OpCode op){
+
+    print("shl");
 }
 void CHIP8::SNE_Vx_Vy(OpCode op){
     print("snevxvy");
