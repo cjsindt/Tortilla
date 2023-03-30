@@ -413,10 +413,19 @@ void CHIP8::SUBN_Vx_Vy(OpCode op){
     //print("subn");
 }
 
+// If the most-significant bit of Vx is 1, then VF is set to 1, otherwise to 0. Then Vx is multiplied by 2.
 void CHIP8::SHL_Vx_Vy(OpCode op){
-
-    print("shl");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    if(V[x] >> 7 == 1){
+        V[0xF] = 1;
+    } else {
+        V[0xF] = 0;
+    }
+    V[x] = V[x] << 1;
+    //print("shl");
 }
+
 void CHIP8::SNE_Vx_Vy(OpCode op){
     print("snevxvy");
 }
