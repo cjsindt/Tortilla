@@ -10,11 +10,12 @@ Display::Display(){
         for(int c = 0; c < 64; c++){
             pixels[r].push_back(RectangleShape(Vector2f(10,10)));
             pixels[r][c].setPosition(Vector2f(c*10, r*10));
-            if(c%2==0){
-                pixels[r][c].setFillColor(Color(Color::Black));
-            } else {
-                pixels[r][c].setFillColor(Color(Color::White));
-            }
+            pixels[r][c].setFillColor(Color(Color::Black));
+            // if(c%2==0){
+            //     pixels[r][c].setFillColor(Color(Color::Black));
+            // } else {
+            //     pixels[r][c].setFillColor(Color(Color::White));
+            // }
         }
     }
 }
@@ -34,4 +35,8 @@ void Display::paint(){
 
 bool Display::isOpen(){
     return window->isOpen();
+}
+
+void Display::setPixels(int x, int y, int * pix){
+
 }

@@ -461,10 +461,11 @@ void CHIP8::RND_Vx_byte(OpCode op){
     //print("rnd");
 }
 
-
+// Display n-byte sprite starting at memory location I at (Vx, Vy), set VF = collision.
 void CHIP8::DRW_Vx_Vy_nibble(OpCode op){
     print("drw");
 }
+
 void CHIP8::SKP_Vx(OpCode op){
     print("skp");
 }
