@@ -16,6 +16,8 @@ class Display{
 
         void setPixels(int x, int y, int * pix, int n);
 
+        RenderWindow* getWindow();
+
     private:
         RenderWindow* window;
         std::vector< std::vector<RectangleShape> > pixels;

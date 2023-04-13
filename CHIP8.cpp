@@ -511,6 +511,31 @@ void CHIP8::LD_Vx_DT(OpCode op){
 
 // All execution stops until a key is pressed, then the value of that key is stored in Vx.
 void CHIP8::LD_Vx_K(OpCode op){
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    sf::Event event;
+    while(true){
+        while(screen.getWindow()->pollEvent(event)){
+            switch(event.type){
+                case sf::Event::KeyPressed:
+                    try{
+                        for(auto &it : keyboard) { 
+                            if(it.second == event.key.code) { 
+                                V[x] = it.first;
+                                return;
+                            } 
+                        } 
+                        throw(-1);
+
+                    } catch (int num) {
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     //print("ldvxk");
 }
 

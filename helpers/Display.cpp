@@ -58,3 +58,7 @@ bool Display::XOR_Color(sf::Color ca, sf::Color cb){
         return true;
     }
 }
+
+sf::RenderWindow * Display::getWindow(){
+    return window;
+}
