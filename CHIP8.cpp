@@ -500,8 +500,13 @@ void CHIP8::SKNP_Vx(OpCode op){
     }
     //print("sknp");
 }
+
+// The value of DT is placed into Vx.
 void CHIP8::LD_Vx_DT(OpCode op){
-    print("ldvxdt");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    V[x] = DELAY_TIMER;
+    //print("ldvxdt");
 }
 void CHIP8::LD_Vx_K(OpCode op){
     print("ldvxk");
