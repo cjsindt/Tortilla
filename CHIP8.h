@@ -71,7 +71,7 @@ class CHIP8{
                                                     {0xC, sf::Keyboard::Num4},
                                                     {0xD, sf::Keyboard::R},
                                                     {0xE, sf::Keyboard::F},
-                                                    {0xF, sf::Keyboard::V}}
+                                                    {0xF, sf::Keyboard::V}};
 
 
     public:
