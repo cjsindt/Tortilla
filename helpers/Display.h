@@ -14,10 +14,13 @@ class Display{
 
         bool isOpen();
 
-        void setPixels(int x, int y, int * pix);
+        void setPixels(int x, int y, int * pix, int n);
 
     private:
         RenderWindow* window;
         std::vector< std::vector<RectangleShape> > pixels;
+        int * pixels_int;
+
+        bool XOR_Color(sf::Color ca, sf::Color cb);
 
 };

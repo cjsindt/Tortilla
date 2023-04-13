@@ -463,7 +463,22 @@ void CHIP8::RND_Vx_byte(OpCode op){
 
 // Display n-byte sprite starting at memory location I at (Vx, Vy), set VF = collision.
 void CHIP8::DRW_Vx_Vy_nibble(OpCode op){
-    print("drw");
+    uint16_t x = op.value() & 0x0F00;
+    uint16_t y = op.value() & 0x00F0;
+    uint16_t n = op.value() & 0x000F;
+    x = x >> 8;
+    y = y >> 4;
+    int pixels[n*8];
+    for(int i = I; i < I + n; i++){
+        char data = RAM[i];
+        for(int j = 0; j < 8; j++){
+            if((data >> j) & 0x1 == 0x1){
+                pixels[i - I] = 1;
+            }
+        }
+    }
+    screen.setPixels(x, y, pixels, n);
+    //print("drw");
 }
 
 void CHIP8::SKP_Vx(OpCode op){

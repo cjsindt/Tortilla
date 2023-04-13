@@ -21,9 +21,9 @@ int main(int argc, char** argv){
 
     chip8.paint();
 
-    while(chip8.isOpen()){
-        sleep(1);
-    }
+    // while(chip8.isOpen()){
+    //     sleep(1);
+    // }
     
     //chip8.printRAM(PROG_START, TOTAL_RAM);
 

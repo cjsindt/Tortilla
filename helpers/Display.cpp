@@ -37,6 +37,24 @@ bool Display::isOpen(){
     return window->isOpen();
 }
 
-void Display::setPixels(int x, int y, int * pix){
+void Display::setPixels(int x, int y, int * pix, int n){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < 8; j++){
+            if(pix[i+j] == 1){
+                if(XOR_Color(Color(Color::White), pixels[i+x][j+y].getFillColor())){
+                    pixels[i+x][j+y].setFillColor(Color::White);
+                } else {
+                    pixels[i+x][j+y].setFillColor(Color::Black);
+                }
+            }
+        }
+    }
+}
 
+bool Display::XOR_Color(sf::Color ca, sf::Color cb){
+    if(ca.r == cb.r && ca.g == ca.g && ca.b == cb.b){
+        return false;
+    } else {
+        return true;
+    }
 }
