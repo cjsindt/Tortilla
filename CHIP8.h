@@ -98,6 +98,8 @@ class CHIP8{
 
         void paint();
 
+        Display * getScreen();
+
         // Instruction set
         void CLS(OpCode op);
         void RET(OpCode op);

@@ -62,6 +62,10 @@ bool CHIP8::isOpen(){
     return screen.isOpen();
 }
 
+Display * CHIP8::getScreen(){
+    return &screen;
+}
+
 // A parsing function to determine which hex value is which opcode
 void CHIP8::parseOpCode(OpCode op){
     switch(op.instr()){

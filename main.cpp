@@ -29,6 +29,7 @@ int main(int argc, char** argv){
     
 
     while(chip8.isOpen()){
+        sf::Event event;
         gettimeofday(&tp, NULL);
         if((tp.tv_sec * 1000 + tp.tv_usec / 1000) > ms + 100){
             ms = tp.tv_sec * 1000 + tp.tv_usec / 1000;
@@ -36,6 +37,15 @@ int main(int argc, char** argv){
             cout << curr_opcode << endl;
             chip8.parseOpCode(curr_opcode);
         }
+        
+        while (chip8.getScreen()->getWindow()->pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed)
+                chip8.getScreen()->getWindow()->close();
+        }
+        
+
 
     }
     
