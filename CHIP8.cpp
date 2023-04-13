@@ -508,29 +508,72 @@ void CHIP8::LD_Vx_DT(OpCode op){
     V[x] = DELAY_TIMER;
     //print("ldvxdt");
 }
+
+// All execution stops until a key is pressed, then the value of that key is stored in Vx.
 void CHIP8::LD_Vx_K(OpCode op){
-    print("ldvxk");
+    //print("ldvxk");
 }
+
+// DT is set equal to the value of Vx.
 void CHIP8::LD_DT_Vx(OpCode op){
-    print("lddtvx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    DELAY_TIMER = V[x];
+    //print("lddtvx");
 }
+
+// ST is set equal to the value of Vx.
 void CHIP8::LD_ST_Vx(OpCode op){
-    print("ldstvx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    SOUND_TIMER = V[x];
+    //print("ldstvx");
 }
+
+// The values of I and Vx are added, and the results are stored in I.
 void CHIP8::ADD_I_Vx(OpCode op){
-    print("addivx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    I += V[x];
+    //print("addivx");
 }
+
+// The value of I is set to the location for the hexadecimal sprite corresponding to the value of Vx.
 void CHIP8::LD_F_Vx(OpCode op){
-    print("ldfvx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    I = V[x]*5;
+    //print("ldfvx");
 }
+
+// The interpreter takes the decimal value of Vx, and places the hundreds digit in memory at location in I, the tens digit at location I+1, and the ones digit at location I+2.
 void CHIP8::LD_B_Vx(OpCode op){
-    print("ldbvx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    RAM[I] = V[x] / 100;
+    RAM[I+1] = (V[x] / 10) % 10;
+    RAM[I+2] = V[x] % 10;
+    //print("ldbvx");
 }
+
+// The interpreter copies the values of registers V0 through Vx into memory, starting at the address in I.
 void CHIP8::LD_I_Vx(OpCode op){
-    print("ldivx");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    for(int i = I; i < I+x; i++){
+        RAM[i] = V[i-I];
+    }
+    //print("ldivx");
 }
+
+// The interpreter reads values from memory starting at location I into registers V0 through Vx.
 void CHIP8::LD_Vx_I(OpCode op){
-    print("ldvxi");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    for(int i = I; i < I+x; i++){
+        V[i-I] = RAM[i];
+    }
+    //print("ldvxi");
 }
 
 
