@@ -4,6 +4,7 @@
 #include "helpers/rom.h"
 #include "helpers/OpCode.h"
 #include "helpers/Display.h"
+#include <map>
 
 using namespace std;
 
@@ -54,6 +55,23 @@ class CHIP8{
         uint8_t DISPLAY[SCREEN_HEIGHT][SCREEN_WIDTH];   // Display pixels
 
         Display screen;
+
+        map<uint8_t, sf::Keyboard::Key> keyboard = {{0x0, sf::Keyboard::X},
+                                                    {0x1, sf::Keyboard::Num1},
+                                                    {0x2, sf::Keyboard::Num2},
+                                                    {0x3, sf::Keyboard::Num3},
+                                                    {0x4, sf::Keyboard::Q},
+                                                    {0x5, sf::Keyboard::W},
+                                                    {0x6, sf::Keyboard::E},
+                                                    {0x7, sf::Keyboard::A},
+                                                    {0x8, sf::Keyboard::S},
+                                                    {0x9, sf::Keyboard::D},
+                                                    {0xA, sf::Keyboard::Z},
+                                                    {0xB, sf::Keyboard::C},
+                                                    {0xC, sf::Keyboard::Num4},
+                                                    {0xD, sf::Keyboard::R},
+                                                    {0xE, sf::Keyboard::F},
+                                                    {0xF, sf::Keyboard::V}}
 
 
     public:
