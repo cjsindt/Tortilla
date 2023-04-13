@@ -490,8 +490,15 @@ void CHIP8::SKP_Vx(OpCode op){
     }
     //print("skp");
 }
+
+// Checks the keyboard, and if the key corresponding to the value of Vx is currently in the up position, PC is increased by 2.
 void CHIP8::SKNP_Vx(OpCode op){
-    print("sknp");
+    uint16_t x = op.value() & 0x0F00;
+    x = x >> 8;
+    if(!(sf::Keyboard::isKeyPressed(keyboard[x]))){
+        PC += 2;
+    }
+    //print("sknp");
 }
 void CHIP8::LD_Vx_DT(OpCode op){
     print("ldvxdt");
